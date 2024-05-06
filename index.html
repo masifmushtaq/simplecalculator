@@ -1,0 +1,111 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple calculator</title>
+  
+</head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #1ace29;
+}
+.box{
+
+    width: 700px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.6);
+    padding: 20px;
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+}
+input {
+        margin: 10px;
+        height: 40px;
+        width: 220px;
+        border: 1px solid green;
+        outline: none;
+        padding-left: 10px;
+    }
+    select{
+        margin: 10px;
+        height: 40px;
+        width: 50px;
+       
+        outline: none;
+        padding-left: 10px;
+        background-color: rgb(37, 190, 37);
+        color: white;
+    
+    }
+    button{
+        margin: 10px;
+        height: 40px;
+        width: 120px;
+       border: none;
+        outline: none;
+        background-color: rgb(23, 202, 23);
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+    
+    }
+</style>
+<body>
+    
+<div class="main">
+
+    <div class="box">
+<h1>Simple Calculator</h1>
+<input type="text" id="one" placeholder="First value">
+<select id="opr">
+    <option value="add">+</option>
+    <option value="sub">-</option>
+    <option value="mul">X</option>
+    <option value="div">/</option>
+</select>
+<input type="text" id="two" placeholder="Second value"><br><br>
+<button onclick="calc()">Calculate</button>
+<input type="text" id="result" readonly placeholder="output show">
+    </div>
+</div>
+
+    
+</body>
+</html>
+
+<script>
+
+    function calc(){
+        let one = document.getElementById('one').value;
+        let two = document.getElementById('two').value;
+        let opr = document.getElementById('opr').value;
+        let result = document.getElementById('result');
+      
+        if(opr == 'add'){
+            result.value = Number(one) + Number(two);
+
+        }
+        if(opr == 'sub'){
+            result.value = Number(one) - Number(two);
+        }
+        if(opr == 'mul'){
+            result.value = Number(one) * Number(two);
+        }
+        if(opr == 'div'){
+            result.value = Number(one) / Number(two);
+        }
+    }
+</script>
